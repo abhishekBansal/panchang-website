@@ -8,7 +8,7 @@
 - Organization: https://anvik.studio
 
 ## Overview
-Dainik Panchang provides accurate, traditional Hindu calendar information (Panchang), daily Tithi, Nakshatra, Yoga, Karana, Shubh Muhurat, and Day/Night Choghadiya. It is specifically engineered for seniors and families with high-contrast typography (WCAG 2.2 AAA >= 7:1), one-tap audio narration (TTS), zero advertisements, zero user tracking, and 100% offline functionality.
+Dainik Panchang provides accurate, traditional Hindu calendar information (Panchang), daily Tithi, Nakshatra, Yoga, Karana, Shubh Muhurat, and Day/Night Choghadiya. It is specifically engineered for seniors and families with high-contrast typography (WCAG 2.2 AAA >= 7:1), one-tap audio narration (TTS), no intrusive advertisements, zero user tracking, and 100% offline functionality.
 
 ## Core Technical & Algorithmic Capabilities
 - **Astronomical Precision**: Real-time celestial calculations based on Jean Meeus astronomical algorithms and Chitrapaksha Lahiri Ayanamsa.
