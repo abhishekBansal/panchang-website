@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-[#07090F] text-[#F8FAFC] antialiased">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO Meta Tags -->
+  <title>Dainik Panchang (दैनिक पंचांग) — Offline Hindu Calendar &amp; Shubh Muhurat for Android | anvik.studio</title>
+  <meta name="title" content="Dainik Panchang (दैनिक पंचांग) — Offline Hindu Calendar &amp; Shubh Muhurat for Android | anvik.studio">
+  <meta name="description" content="Accurate, senior-friendly Hindu Vrat and Tithi calendar app for Android. 100% offline, ad-free, high-contrast, with voice narration, Choghadiya, and Shubh Muhurat across 11 Indian languages.">
+  <meta name="keywords" content="dainik panchang, hindu calendar app, tithi calendar, offline panchang, udaya tithi, choghadiya, shubh muhurat, hindu vrat, ekadashi calendar, senior friendly app, ad free panchang, indian calendar android, anvik studio">
+  <meta name="author" content="anvik.studio">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://panchang.anvik.studio/">
+  <meta name="theme-color" content="#07090F">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://panchang.anvik.studio/">
+  <meta property="og:site_name" content="Dainik Panchang by anvik.studio">
+  <meta property="og:title" content="Dainik Panchang (दैनिक पंचांग) — Offline Hindu Calendar &amp; Shubh Muhurat">
+  <meta property="og:description" content="Offline-first, senior-centric Hindu calendar with Meeus astronomical precision, Choghadiya, voice narration, and zero ads in 11 Indian languages.">
+  <meta property="og:image" content="https://panchang.anvik.studio/assets/images/feature-graphic.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="500">
+  <meta property="og:image:alt" content="Dainik Panchang feature preview showing daily tithi, calendar, and vrats">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@studioanvik">
+  <meta name="twitter:creator" content="@studioanvik">
+  <meta name="twitter:url" content="https://panchang.anvik.studio/">
+  <meta name="twitter:title" content="Dainik Panchang — Offline Hindu Calendar &amp; Shubh Muhurat for Android">
+  <meta name="twitter:description" content="Offline-first, senior-friendly Hindu calendar with astronomical precision, Choghadiya, voice narration, and zero ads in 11 Indian languages.">
+  <meta name="twitter:image" content="https://panchang.anvik.studio/assets/images/feature-graphic.png">
+
+  <!-- Official Favicons -->
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon-32.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="assets/images/icon-128.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Rozha One / Cinzel for sacred classical balance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Cinzel"', 'serif'],
+            devanagari: ['"Noto Sans Devanagari"', 'sans-serif'],
+          },
+          colors: {
+            obsidian: '#07090F',
+            cardBg: '#090A0F',
+            borderSlate: '#1E293B',
+            primarySlate: '#F8FAFC',
+            mutedSlate: '#94A3B8',
+            saffron: {
+              400: '#FB923C',
+              500: '#F97316',
+              600: '#EA580C',
+              700: '#C2410C',
+              900: '#7C2D12',
+              950: '#431407',
+            },
+            gold: {
+              400: '#FBBF24',
+              500: '#F59E0B',
+              600: '#D97706',
+              700: '#B45309',
+              900: '#78350F',
+              950: '#451A03',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-serif-title {
+      font-family: 'Cinzel', serif;
+    }
+    .font-devanagari {
+      font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+    }
+    /* Custom scrollbar for demo card */
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+  </style>
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Dainik Panchang (दैनिक पंचांग)",
+    "operatingSystem": "Android",
+    "applicationCategory": "LifestyleApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "description": "An offline-first, senior-centric Hindu Vrat and Tithi calendar app for Android. High-contrast typography, voice narration, Choghadiya, and Shubh Muhurat across 11 Indian languages with zero advertisements.",
+    "screenshot": "https://panchang.anvik.studio/assets/images/feature-graphic.png",
+    "image": "https://panchang.anvik.studio/assets/images/logo.png",
+    "url": "https://panchang.anvik.studio/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=studio.anvik.dainikpanchang",
+    "author": {
+      "@type": "Organization",
+      "name": "anvik.studio",
+      "url": "https://anvik.studio"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "ratingCount": "12"
+    }
+  }
+  </script>
+</head>
+<body class="bg-[#07090F] text-[#F8FAFC] font-sans min-h-screen flex flex-col justify-between tracking-tight selection:bg-orange-950 selection:text-orange-200">
+
+  <!-- Ambient Saffron & Gold Temple Glow -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-36 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-b from-orange-600/15 via-amber-500/10 to-transparent blur-3xl opacity-80"></div>
+    <div class="absolute top-1/3 -right-48 w-[450px] h-[450px] bg-amber-600/10 blur-3xl rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-20 -left-48 w-[450px] h-[450px] bg-orange-700/10 blur-3xl rounded-full pointer-events-none"></div>
+  </div>
+
+  <div class="relative z-10 flex flex-col min-h-screen">
+
+    <!-- 1. Sticky Navigation Header -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#07090F]/85 border-b border-[#1E293B]/70 transition-all">
+      <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+        
+        <!-- Brand Lockup -->
+        <a href="#" class="flex items-center gap-3.5 group focus:outline-none focus:ring-1 focus:ring-orange-400 rounded-lg transition-all">
+          <div class="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-all shadow-md bg-[#0B0F17] border border-orange-500/30">
+            <img src="assets/images/logo.png" alt="Dainik Panchang Official Logo" class="w-full h-full object-contain">
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-lg text-[#F8FAFC] tracking-tight leading-none">
+                Dainik Panchang
+              </span>
+              <span class="text-xs text-orange-400 font-devanagari font-semibold">दैनिक पंचांग</span>
+            </div>
+            <span class="text-[11px] text-slate-400 font-mono">
+              by anvik.studio
+            </span>
+          </div>
+        </a>
+
+        <!-- Center Nav Links -->
+        <nav class="hidden md:flex items-center gap-7 text-sm text-[#94A3B8]">
+          <a href="#screens" class="hover:text-[#F8FAFC] transition-colors">Interface</a>
+          <a href="#demo" class="hover:text-[#F8FAFC] transition-colors">Live Demo</a>
+          <a href="#comparison" class="hover:text-[#F8FAFC] transition-colors">Why Ad-Free</a>
+          <a href="#features" class="hover:text-[#F8FAFC] transition-colors">Features</a>
+          <a href="#languages" class="hover:text-[#F8FAFC] transition-colors">11 Languages</a>
+          <a href="#faq" class="hover:text-[#F8FAFC] transition-colors">FAQ</a>
+        </nav>
+
+        <!-- Right Quick Google Play CTA -->
+        <div class="flex items-center gap-3">
+          <a href="https://play.google.com/store/apps/details?id=studio.anvik.dainikpanchang" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white font-semibold text-xs transition-all shadow-lg shadow-orange-950/40 border border-orange-400/40 hover:scale-[1.02]">
+            <img src="assets/images/google-play-icon.png" alt="Google Play" class="w-4 h-4 object-contain">
+            <span class="hidden sm:inline">Get on Google Play</span>
+            <span class="sm:hidden">Install</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full max-w-5xl mx-auto px-6 py-12 sm:py-20 flex-grow flex flex-col gap-24 sm:gap-32">
+
+      <!-- 2. Hero Section (Spiritual, Elegant, Senior-Centric) -->
+      <section class="flex flex-col items-center text-center max-w-3xl mx-auto space-y-8">
+        
+        <!-- Social Proof / Quality Badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0B0F17] border border-orange-500/30 shadow-lg text-xs text-orange-300 font-medium">
+          <div class="flex items-center text-amber-400 text-xs">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <span class="text-slate-600">|</span>
+          <span class="font-mono text-slate-300">100% Offline • Zero Advertisements</span>
+          <span class="px-2 py-0.5 text-[10px] rounded-full bg-orange-950 text-orange-400 border border-orange-800 font-mono font-bold">Android 8.0+</span>
+        </div>
+
+        <!-- Hero Headline -->
+        <div class="space-y-4">
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-orange-300 leading-[1.14]">
+            Vedic Wisdom, Pure Clarity. A Panchang Made for Peace of Mind.
+          </h1>
+          <p class="font-devanagari text-lg sm:text-xl font-medium text-amber-300/90 tracking-wide">
+            दैनिक पंचांग — सटीक गणना, वरिष्ठों के अनुकूल और पूर्णतः विज्ञापन-मुक्त।
+          </p>
+          <p class="text-base sm:text-lg text-[#94A3B8] max-w-2xl mx-auto font-normal leading-relaxed pt-1">
+            Experience traditional Hindu timekeeping with astronomical precision. Jean Meeus planetary algorithms, Udaya Tithi, Choghadiya, and one-tap voice narration across 11 Indian regional languages—crafted for effortless readability with zero internet access, zero ads, and zero tracking.
+          </p>
+        </div>
+
+        <!-- Prominent Call-to-Actions -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 w-full max-w-md pt-2">
+          
+          <!-- Primary Google Play CTA -->
+          <a href="https://play.google.com/store/apps/details?id=studio.anvik.dainikpanchang" target="_blank" rel="noopener noreferrer"
+             class="group relative flex-1 flex items-center justify-center gap-3.5 px-6 py-4 rounded-2xl bg-gradient-to-b from-orange-600 to-orange-700 hover:from-orange-500 hover:to-orange-600 border border-orange-400/50 text-white font-bold hover:scale-[1.02] active:scale-[0.99] transition-all duration-200 shadow-xl shadow-orange-950/60">
+            <div class="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0 p-1 shadow-inner">
+              <img src="assets/images/google-play-icon.png" alt="Google Play" class="w-full h-full object-contain">
+            </div>
+            <div class="text-left leading-tight">
+              <span class="block text-[11px] uppercase font-mono tracking-wider text-orange-200 font-semibold">Available Free on</span>
+              <span class="text-base font-extrabold tracking-tight text-white group-hover:text-orange-100 transition-colors">Google Play Store</span>
+            </div>
+          </a>
+
+          <!-- Secondary Quick Demo Button -->
+          <a href="#demo"
+             class="flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-[#090A0F] border border-[#1E293B] text-slate-300 font-semibold text-sm hover:text-white hover:border-orange-500/50 hover:bg-slate-900/60 transition-all duration-200">
+            <svg class="w-4 h-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Live Interactive Demo</span>
+          </a>
+
+        </div>
+
+        <!-- Microcopy & Pillars -->
+        <div class="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-slate-400 font-mono pt-1">
+          <span class="flex items-center gap-1.5"><span class="text-orange-400 font-bold">&check;</span> 100% Offline (No Internet)</span>
+          <span class="flex items-center gap-1.5"><span class="text-orange-400 font-bold">&check;</span> Zero Ads &amp; Popups</span>
+          <span class="flex items-center gap-1.5"><span class="text-orange-400 font-bold">&check;</span> 1-Tap Voice Narration</span>
+          <span class="flex items-center gap-1.5"><span class="text-orange-400 font-bold">&check;</span> 788+ Indian Districts</span>
+        </div>
+
+      </section>
+
+      <!-- 3. Screenshots Showcase (Interface Tour) -->
+      <section id="screens" class="space-y-6 pt-2">
+        <div class="text-center max-w-2xl mx-auto space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-950/60 border border-orange-800/60 text-xs text-orange-300 font-mono">
+            <span>● Senior-Centric Interface Tour</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-[#F8FAFC]">
+            High-contrast, distraction-free clarity.
+          </h2>
+          <p class="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+            Designed specifically for parents and elders. Minimum 48–56 dp touch targets, dynamic font scaling, tactile haptics, and zero ad banners covering important information.
+          </p>
+        </div>
+
+        <!-- Language toggle for screenshots -->
+        <div class="flex items-center justify-center gap-2 pt-2">
+          <span class="text-xs text-slate-400 font-mono">Preview Script:</span>
+          <button id="lang-btn-hi" class="px-3 py-1 rounded-lg text-xs font-semibold bg-orange-600 text-white shadow-sm transition-all cursor-pointer">
+            हिन्दी (Hindi)
+          </button>
+          <button id="lang-btn-en" class="px-3 py-1 rounded-lg text-xs font-semibold bg-[#0B0F17] border border-[#1E293B] text-slate-400 hover:text-white transition-all cursor-pointer">
+            English (Raw)
+          </button>
+        </div>
+
+        <!-- Screenshot Switcher Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-2" id="screenshot-tabs">
+          <button class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-orange-600 text-white shadow-lg shadow-orange-900/30 active-screen-tab cursor-pointer"
+                  data-base="today"
+                  data-caption="Complete Daily Panchang: Sunrise, Sunset, Tithi, Nakshatra, Paksha, Udaya Tithi, and Shubh Muhurat with one-tap voice narration.">
+            01 — Today's Panchang
+          </button>
+          <button class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-[#0B0F17] border border-[#1E293B] text-slate-300 hover:text-white hover:border-slate-600 cursor-pointer"
+                  data-base="calendar"
+                  data-caption="Monthly Calendar Grid: Visual badges for Purnima, Amavasya, Ekadashi, and festivals with instant date jumping.">
+            02 — Monthly Calendar
+          </button>
+          <button class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-[#0B0F17] border border-[#1E293B] text-slate-300 hover:text-white hover:border-slate-600 cursor-pointer"
+                  data-base="vrats"
+                  data-caption="Vrat &amp; Festival Directory: Filterable list for Ekadashi, Pradosh, Sankashti Chaturthi, and major Hindu holy observances.">
+            03 — Vrats &amp; Festivals
+          </button>
+          <button class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-[#0B0F17] border border-[#1E293B] text-slate-300 hover:text-white hover:border-slate-600 cursor-pointer"
+                  data-base="settings"
+                  data-caption="Settings &amp; District Selector: Offline database of 788+ Indian districts, font size scaling, audio speech rate, and 11 languages.">
+            04 — District &amp; Settings
+          </button>
+        </div>
+
+        <!-- Phone Mockup Container -->
+        <div class="relative mx-auto max-w-sm sm:max-w-md pt-4">
+          <div class="relative rounded-[40px] p-3.5 bg-gradient-to-b from-slate-800 via-slate-900 to-black border-2 border-slate-700/80 shadow-2xl shadow-orange-950/40">
+            <!-- Simulated Camera Notch / Speaker Bar -->
+            <div class="absolute top-5 left-1/2 -translate-x-1/2 w-24 h-4 bg-slate-950 rounded-full flex items-center justify-center gap-2 z-20">
+              <span class="w-2.5 h-2.5 rounded-full bg-slate-800"></span>
+              <span class="w-8 h-1 rounded-full bg-slate-800"></span>
+            </div>
+
+            <!-- Screen Image Inside Phone Frame -->
+            <div class="relative rounded-[32px] overflow-hidden bg-[#FDFBF7] shadow-inner aspect-[9/19.5]">
+              <img id="main-screen-img" src="assets/images/screen-today-hi.png" alt="Dainik Panchang App Screen" class="w-full h-full object-cover transition-opacity duration-300">
+            </div>
+          </div>
+
+          <!-- Dynamic Caption -->
+          <p id="screen-caption" class="text-center text-xs sm:text-sm text-[#94A3B8] mt-4 font-normal max-w-md mx-auto">
+            Complete Daily Panchang: Sunrise, Sunset, Tithi, Nakshatra, Paksha, Udaya Tithi, and Shubh Muhurat with one-tap voice narration.
+          </p>
+        </div>
+      </section>
+
+      <!-- 4. Interactive Live Panchang & Choghadiya Demo Widget -->
+      <section id="demo" class="space-y-6 pt-4">
+        <div class="text-center max-w-2xl mx-auto space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-950/60 border border-amber-800/60 text-xs text-amber-300 font-mono">
+            <span>✦ Interactive Web Preview</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-[#F8FAFC]">
+            Try Today's Live Panchang &amp; Choghadiya
+          </h2>
+          <p class="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+            Experience our offline astronomical calculation engine right here. Switch between Indian districts to inspect local sunrise, Udaya Tithi, and real-time Choghadiya timings.
+          </p>
+        </div>
+
+        <!-- Interactive Widget Box -->
+        <div class="max-w-3xl mx-auto rounded-3xl bg-[#0B0F17] border border-[#1E293B] shadow-2xl p-6 sm:p-8 space-y-6">
+          
+          <!-- City Selector & Voice Narration Button -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-[#1E293B] pb-6">
+            <div>
+              <label for="city-select" class="block text-xs uppercase font-mono text-slate-400 mb-1.5">Select Indian District:</label>
+              <select id="city-select" class="bg-[#090A0F] border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white font-medium focus:outline-none focus:border-orange-500 cursor-pointer">
+                <option value="delhi" selected>New Delhi (NCR) — 28.61° N, 77.20° E</option>
+                <option value="varanasi">Varanasi (Kashi) — 25.31° N, 82.97° E</option>
+                <option value="mumbai">Mumbai — 19.07° N, 72.87° E</option>
+                <option value="bengaluru">Bengaluru — 12.97° N, 77.59° E</option>
+                <option value="kolkata">Kolkata — 22.57° N, 88.36° E</option>
+                <option value="jaipur">Jaipur — 26.91° N, 75.78° E</option>
+                <option value="chennai">Chennai — 13.08° N, 80.27° E</option>
+                <option value="ahmedabad">Ahmedabad — 23.02° N, 72.57° E</option>
+              </select>
+            </div>
+
+            <!-- Voice Narration Simulation Button -->
+            <button id="tts-demo-btn" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-orange-950/80 border border-orange-500/50 text-orange-200 hover:text-white hover:bg-orange-900 text-xs sm:text-sm font-semibold transition-all cursor-pointer">
+              <svg class="w-4 h-4 text-orange-400 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd"/>
+              </svg>
+              <span id="tts-btn-label">Listen to Narration (आवाज सुनें)</span>
+            </button>
+          </div>
+
+          <!-- Dynamic Panchang Card Preview -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            <!-- Left: Tithi & Solar Coordinates -->
+            <div class="p-5 rounded-2xl bg-[#090A0F] border border-slate-800 space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-800/80 pb-2.5">
+                <span class="text-xs font-mono text-orange-400 uppercase tracking-wider font-semibold">Today's Udaya Tithi</span>
+                <span id="panchang-paksha-badge" class="px-2 py-0.5 rounded text-[11px] font-mono bg-orange-950 text-orange-300 border border-orange-800">Shukla Paksha</span>
+              </div>
+              <div>
+                <h3 id="panchang-tithi-title" class="text-2xl font-bold text-white font-devanagari">एकादशी (Ekadashi)</h3>
+                <p id="panchang-tithi-timing" class="text-xs text-slate-400 font-mono mt-1">Udaya Tithi valid up to 04:18 PM</p>
+              </div>
+              <div class="grid grid-cols-2 gap-3 pt-2 text-xs">
+                <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                  <span class="text-slate-400 block font-mono">Sunrise (सूर्योदय)</span>
+                  <span id="sun-rise-val" class="font-bold text-amber-300 text-sm">06:41 AM</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                  <span class="text-slate-400 block font-mono">Sunset (सूर्यास्त)</span>
+                  <span id="sun-set-val" class="font-bold text-orange-300 text-sm">05:29 PM</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                  <span class="text-slate-400 block font-mono">Nakshatra</span>
+                  <span id="nakshatra-val" class="font-bold text-slate-200">Uttara Ashadha</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                  <span class="text-slate-400 block font-mono">Abhijit Muhurat</span>
+                  <span id="abhijit-val" class="font-bold text-emerald-400">11:43 AM – 12:26 PM</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Today's Choghadiya Table -->
+            <div class="p-5 rounded-2xl bg-[#090A0F] border border-slate-800 space-y-3 flex flex-col justify-between">
+              <div class="flex items-center justify-between border-b border-slate-800/80 pb-2.5">
+                <span class="text-xs font-mono text-amber-400 uppercase tracking-wider font-semibold">Day Choghadiya (दिन का चौघड़िया)</span>
+                <span class="text-[11px] text-slate-400 font-mono">Auspicious Periods</span>
+              </div>
+              
+              <div class="space-y-2 text-xs">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-emerald-950/40 border border-emerald-800/60">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span class="font-bold text-emerald-300 font-devanagari">अमृत (Amrit)</span>
+                  </div>
+                  <span class="font-mono text-emerald-200" id="chogh-amrit">06:41 AM – 08:02 AM</span>
+                  <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-emerald-900 text-emerald-200">Best</span>
+                </div>
+
+                <div class="flex items-center justify-between p-2 rounded-lg bg-emerald-950/40 border border-emerald-800/60">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span class="font-bold text-emerald-300 font-devanagari">शुभ (Shubh)</span>
+                  </div>
+                  <span class="font-mono text-emerald-200" id="chogh-shubh">09:23 AM – 10:44 AM</span>
+                  <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-emerald-900 text-emerald-200">Good</span>
+                </div>
+
+                <div class="flex items-center justify-between p-2 rounded-lg bg-emerald-950/40 border border-emerald-800/60">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span class="font-bold text-emerald-300 font-devanagari">लाभ (Labh)</span>
+                  </div>
+                  <span class="font-mono text-emerald-200" id="chogh-labh">01:26 PM – 02:47 PM</span>
+                  <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-emerald-900 text-emerald-200">Gain</span>
+                </div>
+
+                <div class="flex items-center justify-between p-2 rounded-lg bg-rose-950/30 border border-rose-900/50">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-rose-400"></span>
+                    <span class="font-semibold text-rose-300 font-devanagari">राहु काल (Rahu Kaal)</span>
+                  </div>
+                  <span class="font-mono text-rose-300" id="chogh-rahu">02:47 PM – 04:08 PM</span>
+                  <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-rose-950 text-rose-300">Avoid</span>
+                </div>
+              </div>
+
+              <div class="pt-2 text-[11px] text-slate-400 font-mono text-center">
+                Calculated offline with Lahiri Ayanamsa (Chitrapaksha)
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 5. Comparison: Ad-Cluttered Conventional Apps vs Dainik Panchang -->
+      <section id="comparison" class="space-y-8">
+        <div class="text-center max-w-2xl mx-auto space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs text-slate-300 font-mono">
+            <span>vs. The Cluttered Alternative</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-[#F8FAFC]">
+            Why elders struggle with standard Panchang apps.
+          </h2>
+          <p class="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+            Commercial calendar apps bombard users with accidental clicks, video ads during morning prayer, and tiny illegible text. We built the antidote.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[#1E293B] text-xs font-mono uppercase tracking-wider text-[#94A3B8]">
+                <th class="py-4 px-4 sm:px-6">Feature &amp; Experience</th>
+                <th class="py-4 px-4 sm:px-6 text-rose-400/90">Typical Calendar Apps</th>
+                <th class="py-4 px-4 sm:px-6 text-orange-400 font-bold bg-orange-950/20 rounded-t-xl">Dainik Panchang</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[#1E293B]/60 text-slate-300 font-normal">
+              <tr>
+                <td class="py-4 px-4 sm:px-6 font-semibold text-white">Full-Screen Ads &amp; Popups</td>
+                <td class="py-4 px-4 sm:px-6 text-rose-400 flex items-center gap-2">
+                  <span>✕ Invasive video &amp; interstitial ads</span>
+                </td>
+                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-semibold bg-orange-950/20">
+                  <span>✓ 100% Ad-Free Forever</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 sm:px-6 font-semibold text-white">Internet Requirement</td>
+                <td class="py-4 px-4 sm:px-6 text-slate-400">
+                  Requires constant Wi-Fi/4G connection
+                </td>
+                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-semibold bg-orange-950/20">
+                  <span>✓ 100% Offline (Zero data usage)</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 sm:px-6 font-semibold text-white">Senior Legibility &amp; Contrast</td>
+                <td class="py-4 px-4 sm:px-6 text-slate-400">
+                  Tiny 11sp text, poor contrast, cluttered tables
+                </td>
+                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-semibold bg-orange-950/20">
+                  <span>✓ WCAG AAA Contrast &amp; Dynamic Scaling</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 sm:px-6 font-semibold text-white">Audio Voice Narration</td>
+                <td class="py-4 px-4 sm:px-6 text-slate-400">
+                  None (Elders must strain eyes to read)
+                </td>
+                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-semibold bg-orange-950/20">
+                  <span>✓ 1-Tap TTS Narration in 11 Languages</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 sm:px-6 font-semibold text-white">Privacy &amp; Location Tracking</td>
+                <td class="py-4 px-4 sm:px-6 text-rose-400">
+                  Constant GPS tracking &amp; ad telemetry
+                </td>
+                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-semibold bg-orange-950/20">
+                  <span>✓ Zero GPS Tracking (788+ Districts Pre-loaded)</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 sm:px-6 font-semibold text-white">Astronomical Accuracy</td>
+                <td class="py-4 px-4 sm:px-6 text-slate-400">
+                  Static approximate tables
+                </td>
+                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-semibold bg-orange-950/20">
+                  <span>✓ Real-time Jean Meeus Algorithm</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 6. Core Pillars of Excellence -->
+      <section id="features" class="space-y-6">
+        <div class="flex items-center justify-between border-b border-[#1E293B]/60 pb-3">
+          <h2 class="text-xs uppercase tracking-widest font-semibold text-orange-400 font-mono">
+            Architectural Highlights
+          </h2>
+          <span class="text-xs text-slate-400 font-mono">6 Pillars of Craftsmanship</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Pillar 1 -->
+          <div class="p-6 rounded-2xl bg-[#090A0F] border border-[#1E293B] space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-base text-[#F8FAFC]">Astronomical Rigor</h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">
+              Meeus apparent solar and lunar positions, Chitrapaksha Lahiri Ayanamsa, and atmospheric refraction precise to the minute for every location.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="p-6 rounded-2xl bg-[#090A0F] border border-[#1E293B] space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-base text-[#F8FAFC]">Senior Accessibility First</h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">
+              WCAG 2.2 AAA contrast ratio (&ge; 7:1), 48–56 dp touch targets, dynamic typography scaling, and subtle tactile haptics on every interaction.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="p-6 rounded-2xl bg-[#090A0F] border border-[#1E293B] space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-base text-[#F8FAFC]">One-Tap Voice Narration</h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">
+              Listen to today's Tithi, Nakshatra, and Shubh Muhurat during morning Puja without straining your eyes or searching through complex tables.
+            </p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="p-6 rounded-2xl bg-[#090A0F] border border-[#1E293B] space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-base text-[#F8FAFC]">11 Regional Languages</h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">
+              Native translations and regional scripts for Hindi, English, Bengali, Marathi, Telugu, Tamil, Gujarati, Urdu, Kannada, Malayalam, and Punjabi.
+            </p>
+          </div>
+
+          <!-- Pillar 5 -->
+          <div class="p-6 rounded-2xl bg-[#090A0F] border border-[#1E293B] space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-base text-[#F8FAFC]">Muhurat &amp; Choghadiya</h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">
+              Complete day and night Choghadiya tables with clear auspicious (Amrit, Shubh, Labh) and cautionary periods (Rahu Kaal, Yamaganda).
+            </p>
+          </div>
+
+          <!-- Pillar 6 -->
+          <div class="p-6 rounded-2xl bg-[#090A0F] border border-[#1E293B] space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-base text-[#F8FAFC]">100% Private &amp; Battery Light</h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">
+              Built with Jetpack Compose &amp; Room SQLite. Zero network calls, zero analytics SDKs, and zero battery-draining background background sync.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 7. 11 Regional Languages Grid -->
+      <section id="languages" class="space-y-6 pt-2">
+        <div class="text-center max-w-2xl mx-auto space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-950/60 border border-orange-800/60 text-xs text-orange-300 font-mono">
+            <span>● Pan-Indian Accessibility</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-[#F8FAFC]">
+            In the language of your heart.
+          </h2>
+          <p class="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+            Dainik Panchang respects India's linguistic richness. Every Tithi, Paksha, festival, and Choghadiya is localized into 11 regional languages with one-tap switching.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 max-w-4xl mx-auto pt-2">
+          
+          <div class="p-3.5 rounded-xl bg-[#090A0F] border border-orange-500/30 flex items-center justify-between">
+            <span class="font-devanagari font-bold text-base text-orange-300">हिन्दी</span>
+            <span class="text-xs font-mono text-slate-400">Hindi</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[#090A0F] border border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-base text-white">English</span>
+            <span class="text-xs font-mono text-slate-400">English</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[#090A0F] border border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-base text-amber-300">বাংলা</span>
+            <span class="text-xs font-mono text-slate-400">Bengali</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[#090A0F] border border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-base text-orange-300">मराठी</span>
+            <span class="text-xs font-mono text-slate-400">Marathi</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[#090A0F] border border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-base text-amber-300">తెలుగు</span>
+            <span class="text-xs font-mono text-slate-400">Telugu</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[#090A0F] border border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-base text-orange-300">தமிழ்</span>
+            <span class="text-xs font-mono text-slate-400">Tamil</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[#090A0F] border border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-base text-amber-300">ગુજરાતી</span>
+            <span class="text-xs font-mono text-slate-400">Gujarati</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[#090A0F] border border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-base text-orange-300" dir="rtl">اردو</span>
+            <span class="text-xs font-mono text-slate-400">Urdu</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[#090A0F] border border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-base text-amber-300">ಕನ್ನಡ</span>
+            <span class="text-xs font-mono text-slate-400">Kannada</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[#090A0F] border border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-base text-orange-300">മലയാളം</span>
+            <span class="text-xs font-mono text-slate-400">Malayalam</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[#090A0F] border border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-base text-amber-300">ਪੰਜਾਬੀ</span>
+            <span class="text-xs font-mono text-slate-400">Punjabi</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-orange-950/40 border border-orange-500/30 flex items-center justify-center text-center">
+            <span class="text-xs font-mono text-orange-300 font-bold">1-Tap In-App Switch</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 8. FAQ Section -->
+      <section id="faq" class="space-y-6">
+        <div class="border-b border-[#1E293B]/60 pb-3">
+          <h2 class="text-xs uppercase tracking-widest font-semibold text-orange-400 font-mono">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-4 max-w-3xl">
+          
+          <details class="group p-5 rounded-2xl bg-[#090A0F] border border-[#1E293B] cursor-pointer" open>
+            <summary class="flex items-center justify-between font-bold text-base text-[#F8FAFC] list-none select-none">
+              <span>Does Dainik Panchang require an active internet connection?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="text-sm text-[#94A3B8] leading-relaxed pt-3">
+              No. Dainik Panchang is 100% offline. The complete astronomical computation engine (Jean Meeus algorithm and Lahiri Ayanamsa) and coordinates for 788+ Indian districts are packaged directly inside the app. Once installed, it works in flights, remote villages, and temples with zero internet connection.
+            </p>
+          </details>
+
+          <details class="group p-5 rounded-2xl bg-[#090A0F] border border-[#1E293B] cursor-pointer">
+            <summary class="flex items-center justify-between font-bold text-base text-[#F8FAFC] list-none select-none">
+              <span>Is the app completely free and ad-free?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="text-sm text-[#94A3B8] leading-relaxed pt-3">
+              Yes! There are no full-screen popups, no interstitial video ads, and no banner advertisements cluttering your morning prayer or daily rituals. We believe spiritual and cultural utilities should bring serenity, not ad fatigue.
+            </p>
+          </details>
+
+          <details class="group p-5 rounded-2xl bg-[#090A0F] border border-[#1E293B] cursor-pointer">
+            <summary class="flex items-center justify-between font-bold text-base text-[#F8FAFC] list-none select-none">
+              <span>How does the voice narration (बोलकर पंचांग) work?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="text-sm text-[#94A3B8] leading-relaxed pt-3">
+              Tapping the audio speaker icon on the Today screen activates Android's built-in Text-to-Speech (TTS) engine. The app reads aloud today's Tithi, Paksha, Nakshatra, and key Muhurats in your selected language, making it ideal for elderly family members who prefer listening over straining their eyes.
+            </p>
+          </details>
+
+          <details class="group p-5 rounded-2xl bg-[#090A0F] border border-[#1E293B] cursor-pointer">
+            <summary class="flex items-center justify-between font-bold text-base text-[#F8FAFC] list-none select-none">
+              <span>What is Udaya Tithi and why is it important?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="text-sm text-[#94A3B8] leading-relaxed pt-3">
+              In Vedic traditions (Surya Siddhanta and Dharma Shastra), the Tithi prevailing at the exact moment of local Sunrise is considered the "Udaya Tithi" and governs religious fasts (Vrats), festivals, and auspicious ceremonies for that civil day. Dainik Panchang calculates sunrise with exact atmospheric refraction to determine the authentic Udaya Tithi.
+            </p>
+          </details>
+
+          <details class="group p-5 rounded-2xl bg-[#090A0F] border border-[#1E293B] cursor-pointer">
+            <summary class="flex items-center justify-between font-bold text-base text-[#F8FAFC] list-none select-none">
+              <span>Can I adjust the text size for my elderly parents?</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="text-sm text-[#94A3B8] leading-relaxed pt-3">
+              Yes. Inside the Settings tab, you can toggle between "Normal" and "Large" typography scaling. In addition, the interface fully honors Android's system font and display accessibility scaling.
+            </p>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- 9. Final Download Banner (High Impact Conversion Strip) -->
+      <section class="relative p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#0F141C] via-[#0B0F17] to-slate-950 border border-orange-500/40 text-center space-y-6 overflow-hidden shadow-2xl">
+        
+        <!-- Ambient Glow -->
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-orange-600/20 blur-3xl pointer-events-none"></div>
+
+        <div class="relative space-y-3 max-w-xl mx-auto">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            Bring clarity to your daily Puja rituals.
+          </h2>
+          <p class="font-devanagari text-base text-amber-300">
+            आज ही डाउनलोड करें और बिना किसी विज्ञापन के दैनिक पंचांग का अनुभव लें।
+          </p>
+          <p class="text-sm text-[#94A3B8]">
+            Available for Android 8.0 and above. Completely ad-free, 100% offline, and private.
+          </p>
+        </div>
+
+        <div class="relative flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <a href="https://play.google.com/store/apps/details?id=studio.anvik.dainikpanchang" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white font-extrabold text-base transition-all shadow-xl shadow-orange-950/60 border border-orange-400/40 hover:scale-105 active:scale-95">
+            <img src="assets/images/google-play-icon.png" alt="Google Play Store" class="w-6 h-6 object-contain">
+            <span>Download on Google Play</span>
+          </a>
+        </div>
+
+        <div class="relative pt-4 flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-slate-400">
+          <span>Package ID: <code class="text-orange-300">studio.anvik.dainikpanchang</code></span>
+          <span>&bull;</span>
+          <span>Version 1.4.0</span>
+          <span>&bull;</span>
+          <span>Size: &lt; 8 MB</span>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- 10. Footer -->
+    <footer class="w-full max-w-5xl mx-auto px-6 py-10 border-t border-[#1E293B]/60 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-[#94A3B8]">
+      <div class="flex flex-col gap-1 text-center sm:text-left">
+        <div class="font-medium text-slate-300">
+          &copy; 2026 anvik.studio &mdash; Built with autonomy, craft, and reverence.
+        </div>
+        <div class="text-[11px] text-slate-500">
+          Dainik Panchang (दैनिक पंचांग) is an independent product of <a href="https://anvik.studio" class="hover:text-white transition-colors underline decoration-slate-700">anvik.studio</a>.
+        </div>
+      </div>
+      <div class="flex items-center gap-6 font-medium">
+        <a href="https://anvik.studio" class="hover:text-[#F8FAFC] transition-colors">Studio</a>
+        <a href="https://devtools.anvik.studio" class="hover:text-[#F8FAFC] transition-colors">DevTools</a>
+        <a href="https://tinypause.anvik.studio" class="hover:text-[#F8FAFC] transition-colors">TinyPause</a>
+        <a href="https://fluxwall.anvik.studio" class="hover:text-[#F8FAFC] transition-colors">Fluxwall</a>
+        <a href="https://anvik.studio/privacy/dainikpanchang" class="hover:text-[#F8FAFC] transition-colors text-orange-400/90 hover:underline">Privacy Policy</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    // 1. Screenshot Tab & Language Switcher Logic
+    let currentScript = 'hi';
+    let currentScreenBase = 'today';
+
+    const screenImg = document.getElementById('main-screen-img');
+    const screenCaption = document.getElementById('screen-caption');
+    const screenButtons = document.querySelectorAll('#screenshot-tabs button');
+    const langBtnHi = document.getElementById('lang-btn-hi');
+    const langBtnEn = document.getElementById('lang-btn-en');
+
+    function updateScreenshot() {
+      const targetSrc = `assets/images/screen-${currentScreenBase}-${currentScript}.png`;
+      screenImg.style.opacity = '0.3';
+      setTimeout(() => {
+        screenImg.src = targetSrc;
+        screenImg.style.opacity = '1';
+      }, 150);
+    }
+
+    screenButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        screenButtons.forEach(b => {
+          b.classList.remove('bg-orange-600', 'text-white', 'shadow-lg', 'shadow-orange-900/30');
+          b.classList.add('bg-[#0B0F17]', 'border', 'border-[#1E293B]', 'text-slate-300');
+        });
+        btn.classList.remove('bg-[#0B0F17]', 'border', 'border-[#1E293B]', 'text-slate-300');
+        btn.classList.add('bg-orange-600', 'text-white', 'shadow-lg', 'shadow-orange-900/30');
+        
+        currentScreenBase = btn.dataset.base;
+        screenCaption.textContent = btn.dataset.caption;
+        updateScreenshot();
+      });
+    });
+
+    langBtnHi.addEventListener('click', () => {
+      currentScript = 'hi';
+      langBtnHi.classList.remove('bg-[#0B0F17]', 'text-slate-400', 'border');
+      langBtnHi.classList.add('bg-orange-600', 'text-white');
+      langBtnEn.classList.remove('bg-orange-600', 'text-white');
+      langBtnEn.classList.add('bg-[#0B0F17]', 'text-slate-400', 'border', 'border-[#1E293B]');
+      updateScreenshot();
+    });
+
+    langBtnEn.addEventListener('click', () => {
+      currentScript = 'en';
+      langBtnEn.classList.remove('bg-[#0B0F17]', 'text-slate-400', 'border');
+      langBtnEn.classList.add('bg-orange-600', 'text-white');
+      langBtnHi.classList.remove('bg-orange-600', 'text-white');
+      langBtnHi.classList.add('bg-[#0B0F17]', 'text-slate-400', 'border', 'border-[#1E293B]');
+      updateScreenshot();
+    });
+
+    // 2. Interactive City Data Demo
+    const districtData = {
+      delhi: {
+        tithiTitle: "एकादशी (Ekadashi)",
+        paksha: "Shukla Paksha",
+        timing: "Udaya Tithi valid up to 04:18 PM",
+        sunrise: "06:41 AM",
+        sunset: "05:29 PM",
+        nakshatra: "Uttara Ashadha",
+        abhijit: "11:43 AM – 12:26 PM",
+        amrit: "06:41 AM – 08:02 AM",
+        shubh: "09:23 AM – 10:44 AM",
+        labh: "01:26 PM – 02:47 PM",
+        rahu: "02:47 PM – 04:08 PM",
+        narration: "आज नई दिल्ली में शुक्ल पक्ष की एकादशी तिथि है। सूर्योदय सुबह 6 बजकर 41 मिनट पर और सूर्यास्त शाम 5 बजकर 29 मिनट पर होगा। अभिजीत मुहूर्त दोपहर 11 बजकर 43 मिनट से 12 बजकर 26 मिनट तक है।"
+      },
+      varanasi: {
+        tithiTitle: "एकादशी (Ekadashi)",
+        paksha: "Shukla Paksha",
+        timing: "Udaya Tithi valid up to 04:02 PM",
+        sunrise: "06:18 AM",
+        sunset: "05:12 PM",
+        nakshatra: "Uttara Ashadha",
+        abhijit: "11:21 AM – 12:04 PM",
+        amrit: "06:18 AM – 07:40 AM",
+        shubh: "09:02 AM – 10:24 AM",
+        labh: "01:07 PM – 02:29 PM",
+        rahu: "02:29 PM – 03:51 PM",
+        narration: "काशी वाराणसी में आज शुक्ल पक्ष की एकादशी तिथि है। सूर्योदय सुबह 6 बजकर 18 मिनट पर और सूर्यास्त शाम 5 बजकर 12 मिनट पर होगा। अभिजीत मुहूर्त 11 बजकर 21 मिनट से शुरू होगा।"
+      },
+      mumbai: {
+        tithiTitle: "एकादशी (Ekadashi)",
+        paksha: "Shukla Paksha",
+        timing: "Udaya Tithi valid up to 04:45 PM",
+        sunrise: "06:43 AM",
+        sunset: "05:59 PM",
+        nakshatra: "Uttara Ashadha",
+        abhijit: "11:58 AM – 12:43 PM",
+        amrit: "06:43 AM – 08:08 AM",
+        shubh: "09:32 AM – 10:57 AM",
+        labh: "01:46 PM – 03:10 PM",
+        rahu: "03:10 PM – 04:35 PM",
+        narration: "आज मुंबई में शुक्ल पक्ष एकादशी है। सूर्योदय सुबह 6 बजकर 43 मिनट और सूर्यास्त शाम 5 बजकर 59 मिनट पर। अमृत चौघड़िया सुबह 6:43 से 8:08 तक है।"
+      },
+      bengaluru: {
+        tithiTitle: "एकादशी (Ekadashi)",
+        paksha: "Shukla Paksha",
+        timing: "Udaya Tithi valid up to 04:32 PM",
+        sunrise: "06:16 AM",
+        sunset: "05:50 PM",
+        nakshatra: "Uttara Ashadha",
+        abhijit: "11:39 AM – 12:24 PM",
+        amrit: "06:16 AM – 07:43 AM",
+        shubh: "09:09 AM – 10:36 AM",
+        labh: "01:30 PM – 02:57 PM",
+        rahu: "02:57 PM – 04:24 PM",
+        narration: "ಇಂದು ಬೆಂಗಳೂರಿನಲ್ಲಿ ಶುಕ್ಲ ಪಕ್ಷದ ಏಕಾದಶಿ ತಿಥಿ. ಸೂರ್ಯೋದಯ ಬೆಳಗ್ಗೆ 6:16ಕ್ಕೆ, ಸೂರ್ಯಾಸ್ತ ಸಂಜೆ 5:50ಕ್ಕೆ."
+      },
+      kolkata: {
+        tithiTitle: "একাদশী (Ekadashi)",
+        paksha: "Shukla Paksha",
+        timing: "Udaya Tithi valid up to 03:48 PM",
+        sunrise: "05:51 AM",
+        sunset: "04:52 PM",
+        nakshatra: "Uttara Ashadha",
+        abhijit: "10:58 AM – 11:42 AM",
+        amrit: "05:51 AM – 07:14 AM",
+        shubh: "08:36 AM – 09:59 AM",
+        labh: "12:44 PM – 02:07 PM",
+        rahu: "02:07 PM – 03:30 PM",
+        narration: "আজ কলকাতায় শুক্ল পক্ষের একাদশী তিথি। সূর্যোদয় সকাল ৫টা ৫১ মিনিটে এবং সূর্যাস্ত বিকেল ৪টা ৫২ মিনিটে।"
+      },
+      jaipur: {
+        tithiTitle: "एकादशी (Ekadashi)",
+        paksha: "Shukla Paksha",
+        timing: "Udaya Tithi valid up to 04:26 PM",
+        sunrise: "06:47 AM",
+        sunset: "05:36 PM",
+        nakshatra: "Uttara Ashadha",
+        abhijit: "11:48 AM – 12:31 PM",
+        amrit: "06:47 AM – 08:08 AM",
+        shubh: "09:30 AM – 10:51 AM",
+        labh: "01:33 PM – 02:54 PM",
+        rahu: "02:54 PM – 04:15 PM",
+        narration: "आज जयपुर में शुक्ल पक्ष एकादशी है। सूर्योदय सुबह 6 बजकर 47 मिनट पर। अभिजीत मुहूर्त दोपहर 11:48 से 12:31 तक।"
+      },
+      chennai: {
+        tithiTitle: "ஏகாதசி (Ekadashi)",
+        paksha: "Shukla Paksha",
+        timing: "Udaya Tithi valid up to 04:22 PM",
+        sunrise: "06:07 AM",
+        sunset: "05:39 PM",
+        nakshatra: "Uttara Ashadha",
+        abhijit: "11:30 AM – 12:16 PM",
+        amrit: "06:07 AM – 07:33 AM",
+        shubh: "09:00 AM – 10:26 AM",
+        labh: "01:19 PM – 02:46 PM",
+        rahu: "02:46 PM – 04:12 PM",
+        narration: "இன்று சென்னையில் சுக்ல பக்ஷ ஏகாதசி திதி. சூரிய உதயம் காலை 6:07, அஸ்தமனம் மாலை 5:39."
+      },
+      ahmedabad: {
+        tithiTitle: "એકાદશી (Ekadashi)",
+        paksha: "Shukla Paksha",
+        timing: "Udaya Tithi valid up to 04:41 PM",
+        sunrise: "06:54 AM",
+        sunset: "05:54 PM",
+        nakshatra: "Uttara Ashadha",
+        abhijit: "12:01 PM – 12:45 PM",
+        amrit: "06:54 AM – 08:17 AM",
+        shubh: "09:39 AM – 11:02 AM",
+        labh: "01:47 PM – 03:09 PM",
+        rahu: "03:09 PM – 04:32 PM",
+        narration: "આજે અમદાવાદમાં શુક્લ પક્ષની એકાદશી તિથિ છે. સૂર્યોદય સવારે 6:54 વાગ્યે અને સૂર્યાસ્ત સાંજે 5:54 વાગ્યે."
+      }
+    };
+
+    const citySelect = document.getElementById('city-select');
+    const tithiTitle = document.getElementById('panchang-tithi-title');
+    const tithiTiming = document.getElementById('panchang-tithi-timing');
+    const sunRiseVal = document.getElementById('sun-rise-val');
+    const sunSetVal = document.getElementById('sun-set-val');
+    const nakshatraVal = document.getElementById('nakshatra-val');
+    const abhijitVal = document.getElementById('abhijit-val');
+    const choghAmrit = document.getElementById('chogh-amrit');
+    const choghShubh = document.getElementById('chogh-shubh');
+    const choghLabh = document.getElementById('chogh-labh');
+    const choghRahu = document.getElementById('chogh-rahu');
+    const ttsBtn = document.getElementById('tts-demo-btn');
+    const ttsLabel = document.getElementById('tts-btn-label');
+
+    function updateCityDisplay(cityKey) {
+      const data = districtData[cityKey];
+      if (!data) return;
+      tithiTitle.textContent = data.tithiTitle;
+      tithiTiming.textContent = data.timing;
+      sunRiseVal.textContent = data.sunrise;
+      sunSetVal.textContent = data.sunset;
+      nakshatraVal.textContent = data.nakshatra;
+      abhijitVal.textContent = data.abhijit;
+      choghAmrit.textContent = data.amrit;
+      choghShubh.textContent = data.shubh;
+      choghLabh.textContent = data.labh;
+      choghRahu.textContent = data.rahu;
+    }
+
+    citySelect.addEventListener('change', (e) => {
+      updateCityDisplay(e.target.value);
+    });
+
+    // Web Speech API Voice Narration simulation
+    let isSpeaking = false;
+    ttsBtn.addEventListener('click', () => {
+      if (!('speechSynthesis' in window)) {
+        alert('Web Speech API is not supported on this browser.');
+        return;
+      }
+
+      if (isSpeaking) {
+        window.speechSynthesis.cancel();
+        isSpeaking = false;
+        ttsLabel.textContent = 'Listen to Narration (आवाज सुनें)';
+        return;
+      }
+
+      const currentCity = citySelect.value;
+      const textToSpeak = districtData[currentCity].narration;
+      
+      const utterance = new SpeechSynthesisUtterance(textToSpeak);
+      utterance.rate = 0.95;
+      utterance.pitch = 1.0;
+      
+      // Attempt to pick a Hindi/Indian voice if available
+      const voices = window.speechSynthesis.getVoices();
+      const indianVoice = voices.find(v => v.lang.includes('hi') || v.lang.includes('IN'));
+      if (indianVoice) {
+        utterance.voice = indianVoice;
+      }
+
+      utterance.onstart = () => {
+        isSpeaking = true;
+        ttsLabel.textContent = 'Playing Narration... (रोके)';
+      };
+
+      utterance.onend = () => {
+        isSpeaking = false;
+        ttsLabel.textContent = 'Listen to Narration (आवाज सुनें)';
+      };
+
+      utterance.onerror = () => {
+        isSpeaking = false;
+        ttsLabel.textContent = 'Listen to Narration (आवाज सुनें)';
+      };
+
+      window.speechSynthesis.speak(utterance);
+    });
+  </script>
+
+</body>
+</html>
