@@ -1,0 +1,46 @@
+# Dainik Panchang (दैनिक पंचांग)
+> An offline-first, senior-centric Hindu Vrat and Tithi calendar Android app built with Kotlin, Jetpack Compose, and Room SQLite. Published on Google Play by anvik.studio.
+
+- Website: https://panchang.anvik.studio
+- Google Play Store: https://play.google.com/store/apps/details?id=studio.anvik.dainikpanchang
+- Package ID: studio.anvik.dainikpanchang
+- Privacy Policy: https://anvik.studio/privacy/dainikpanchang
+- Organization: https://anvik.studio
+
+## Overview
+Dainik Panchang provides accurate, traditional Hindu calendar information (Panchang), daily Tithi, Nakshatra, Yoga, Karana, Shubh Muhurat, and Day/Night Choghadiya. It is specifically engineered for seniors and families with high-contrast typography (WCAG 2.2 AAA >= 7:1), one-tap audio narration (TTS), zero advertisements, zero user tracking, and 100% offline functionality.
+
+## Core Technical & Algorithmic Capabilities
+- **Astronomical Precision**: Real-time celestial calculations based on Jean Meeus astronomical algorithms and Chitrapaksha Lahiri Ayanamsa.
+- **Udaya Tithi Solver**: Accurately computes the civil day's ruling Tithi at local sunrise, factoring in atmospheric refraction, in accordance with Surya Siddhanta and Dharma Shastra.
+- **Offline Coordinates Database**: Pre-loaded database containing exact latitude, longitude, and elevation for 788+ Indian districts. Does not require GPS or internet access.
+- **Day & Night Choghadiya**: Calculates real-time 8-slot day and 8-slot night Choghadiyas customized to the user's specific district, clearly classifying periods into Amrit, Shubh, Labh (auspicious), Char (neutral), and Rog, Kaal, Udveg (inauspicious), along with Rahu Kaal, Yamaganda, and Gulika Kaal.
+- **One-Tap Voice Narration**: Uses Android's built-in Text-to-Speech (TTS) engine to read aloud today's Tithi, Nakshatra, and Shubh Muhurat during morning Puja, enabling hands-free access for elders.
+- **90-Day Vrat & Festival Engine**: Chronological calendar of upcoming Ekadashi (with Smartha & Vaishnava rules), Pradosh, Sankashti Chaturthi, Purnima, Amavasya, and major festivals.
+- **Senior Accessibility**: Large touch targets (48–56 dp), dynamic font scaling (Normal / Large +22%), tactile haptic feedback, and a warm ivory high-contrast visual theme.
+
+## Supported Languages (11 Locales)
+1. Hindi (hi-IN) - हिन्दी
+2. English (en-US)
+3. Bengali (bn-BD) - বাংলা
+4. Marathi (mr-IN) - मराठी
+5. Telugu (te-IN) - తెలుగు
+6. Tamil (ta-IN) - தமிழ்
+7. Gujarati (gu) - ગુજરાતી
+8. Urdu (ur) - اردو
+9. Kannada (kn-IN) - ಕನ್ನಡ
+10. Malayalam (ml-IN) - മലയാളം
+11. Punjabi (pa) - ਪੰਜਾਬੀ
+
+All calendar, tithi, muhurat, and astronomical terms are respectfully localized into native regional scripts via the app's internal PanchangLocalizer.
+
+## Privacy & Offline Integrity
+- 100% Offline: The app contains zero network permissions (`android.permission.INTERNET` is not requested).
+- Zero Analytics: No Firebase, no telemetry, no third-party ad networks, no tracking SDKs.
+- Zero Accounts: No sign-in, email, phone number, or cloud account required.
+- Zero Permissions: Does not access camera, microphone, contacts, storage, or GPS location. District selection is done from a pre-bundled offline dataset.
+
+## Target Audience & Use Cases
+- Elderly devotees and parents performing daily morning Puja and rituals.
+- Devotees observing Ekadashi, Pradosh, Sankashti, and Navratri fasts.
+- Families seeking accurate Shubh Muhurats and Choghadiya timings without intrusive popups or accidental ad taps.
